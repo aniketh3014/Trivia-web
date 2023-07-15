@@ -41,11 +41,24 @@
                     correct.style.backgroundColor='green'
                     document.querySelector('#feedback1').innerHTML='Correct!'
                 });
-                let incorrect = document.querySelector('.incorrect');
-                incorrect.addEventListener('click',function(){
-                    incorrect.style.backgroundColor='red'
-                    document.querySelector('#feedback1').innerHTML='incorret!'
+                let incorrect = document.querySelectorAll('.incorrect');
+                incorrect.forEach(function(element){
+                    element.addEventListener('click',function(){
+                        element.style.backgroundColor='red'
+                        document.querySelector('#feedback1').innerHTML='incorret!'
+                    });
                 });
+                document.querySelector('#sub').addEventListener('click',function(event){
+                    let input = document.querySelector('input');
+                    if (input.value == 'S. Somanath'){
+                        input.style.backgroundColor='green'
+                        document.querySelector('#feedback2').innerHTML='Correct!'
+                    }else{
+                        input.style.backgroundColor='red'
+                        document.querySelector('#feedback2').innerHTML='Incorrect!'
+                    }
+                    event.preventDefault();
+                })
         
         </script>
     </body>
